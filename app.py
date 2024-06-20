@@ -50,7 +50,6 @@ df=df.replace(to_replace='90 years and older', value= '90 years +')
 gender_list=df['Gender'].unique().tolist()
 dg_date_list= df['Date'].unique().tolist()
 mylist = df['Age group'].unique().tolist()
-dg_date_list
 
 
 # In[6]:
@@ -108,12 +107,6 @@ df_ws.rename(columns={'Sex':'Gender'}, inplace=True)
 # In[10]:
 
 
-df_ws
-
-
-# In[11]:
-
-
 #set up drop lists 
 # sex_list = df_ei['Sex'].unique().tolist()
 # beneficiary_list = df_ei['Beneficiary detail'].unique().tolist()
@@ -123,20 +116,20 @@ income_statistic_list = df_ws['Statistics'].unique().tolist()
 
 
 
-# In[12]:
+# In[11]:
 
 
 UOM = df_ws[['Statistics', 'UOM']]
 UOM=UOM.drop_duplicates()
 
 
-# In[13]:
+# In[12]:
 
 
 UOM=UOM.rename(columns={'Statistics':'Measure'})
 
 
-# In[14]:
+# In[13]:
 
 
 temp_df=df_lf[['Labour force characteristics', 'UOM']]
@@ -144,19 +137,19 @@ temp_df=temp_df.drop_duplicates()
 temp_df=temp_df.rename(columns={'Labour force characteristics':'Measure'})
 
 
-# In[15]:
+# In[14]:
 
 
 UOM=pd.concat([UOM, temp_df], ignore_index = True)
 
 
-# In[16]:
+# In[15]:
 
 
 # beneficiary_list = df_ei['Beneficiary detail'].unique().tolist()
 
 
-# In[17]:
+# In[16]:
 
 
 # temp_df=df_ei[['Beneficiary detail', 'UOM']]
@@ -165,27 +158,27 @@ UOM=pd.concat([UOM, temp_df], ignore_index = True)
 # temp_df=temp_df.rename(columns={'Beneficiary detail':'Measure'})
 
 
-# In[18]:
+# In[17]:
 
 
 # creating negative values for women for population pyramid.
 df_dg['VALUE'] = df_dg.apply(lambda row: row['VALUE']*-1 if row['Gender']=='Women+' else row['VALUE'], axis=1)
 
 
-# In[19]:
+# In[18]:
 
 
 df_dg['Year']=pd.DatetimeIndex(df_dg['Date']).year
 
 
-# In[20]:
+# In[19]:
 
 
 df_dg.drop(df_dg.index[df_dg['Gender']=='Total - gender'], inplace=True)
 df_dg['Gender'].unique()
 
 
-# In[52]:
+# In[20]:
 
 
 markdown_about = dcc.Markdown('''
@@ -197,7 +190,7 @@ markdown_about = dcc.Markdown('''
 ''')
 
 
-# In[56]:
+# In[21]:
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.SIMPLEX])
@@ -444,7 +437,7 @@ def toggle_modal(n1, n2, is_open):
         return not is_open
     return is_open
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8052)
+    app.run_server(debug=True, port=8050)
 
 
 
