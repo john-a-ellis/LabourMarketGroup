@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'LabourMarketDashBoard'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_71D896B8F2324C2BA030142B698255F1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DDE831626BA74F37821ADC41A950FFB9 }}
