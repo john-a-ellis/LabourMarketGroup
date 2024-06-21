@@ -5,3 +5,4 @@ pandas
 stats_can
 plotly
 gunicorn
+setuptools
