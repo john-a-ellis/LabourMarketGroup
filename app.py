@@ -21,7 +21,12 @@ df_dg=pd.read_csv('Resources/dg.csv')
 df_lf=pd.read_csv('Resources/lf.csv')
 df_ws=pd.read_csv('Resources/ws.csv')
 
-
+df_dg.set_index('Unnamed: 0', inplace=True)
+df_lf.set_index('Unnamed: 0', inplace=True)
+df_ws.set_index('Unnamed: 0', inplace=True)
+df_dg['Date'] = pd.to_datetime(df_dg['Date'])
+df_lf['Date'] = pd.to_datetime(df_lf['Date'])
+df_ws['Date'] = pd.to_datetime(df_ws['Date'])
 
 markdown_about = dcc.Markdown('''
 - The North Bay Labour Market Dashboard was created by John Ellis to showcase data viualization and analytical abilities.  All data is retrieved from the Statistics Canada website via API calls.  The Data includes: 
