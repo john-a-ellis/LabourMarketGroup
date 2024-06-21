@@ -2,8 +2,6 @@ dash==2.14.2
 dash_bootstrap_components
 numpy==1.26.4
 pandas
-stats_can
 plotly
 gunicorn
 setuptools
-statsmodels
