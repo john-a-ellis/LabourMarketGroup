@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 # Import Dependencies
 import pandas as pd
 from dash import Dash, html, dcc, callback, Output, Input, State
@@ -38,6 +35,8 @@ markdown_about = dcc.Markdown('''
 
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.SIMPLEX])
+server = app.server
+
 myTitle = 'Labour Market in North Bay Ontario'
 app.title = myTitle
 
