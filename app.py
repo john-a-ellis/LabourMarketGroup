@@ -129,25 +129,7 @@ app.layout=dbc.Container([
                      }),
             html.Div(
                 [
-                    # html.Div(dbc.Button(
-                    #     # className='btn-group',
-                    #     # inputClassName='btn-check',
-                    #     # labelClassName="btn btn-outline-light",
-                    #     # labelCheckedClassName="btn btn-light",
-                    #     # options=[
-                    #     #     {"label": "Graph", "value": 1},
-                    #     #     {"label": "Table", "value": 2}
-                    #     # ],
-                    #     "Dashboard",
-                    #     className="btn btn-dashboard",
-                    #     color="primary",
-                    #     # outline = True,
-                    #     n_clicks=0, 
-                        
-                    #     ),
-                    #          style={'width': 104,
-                    #                'background':'fffff'}
-                    # ),
+                    
                     html.Div([
                         dbc.Button(
                             "About",
@@ -182,39 +164,17 @@ app.layout=dbc.Container([
                 [
                     html.Div(
                         [
-                            # html.H2('Sex:'),
-                            # dcc.Dropdown(
-                            #     options=sex_list,
-                            #     value=1,
-                            #     clearable=True,
-                            #     multi=True,
-                            #     optionHeight=40
-                            # )
+                            
                         ]
                     ),
                     html.Div(
                         [
-                            # html.H2('Statistic to Plot:'),
-                            # dcc.Dropdown(
-                            #     options=UOM['Measure'],
-                            #     value=1,
-                            #     clearable=False,
-                            #     multi=True,
-                            #     optionHeight=40
-                            # )
+                           
                         ]
                     ),                    
                     html.Div(
                         [
-                            # html.H2('Income statistic:'),
-                            # dcc.Dropdown(
-                            #     options=income_statistic_list,
-                            #     value=income_statistic_list[0],
-                            #     clearable=True,
-                            #     multi=True,
-                            #     optionHeight=40
-                                
-                            # )
+                           
                         ]
                     )
             ],
@@ -272,9 +232,9 @@ def toggle_modal(n1, n2, is_open):
     if n1 or n2:
         return not is_open
     return is_open
-if __name__ == "__main__":
-    app.run_server(debug=None, jupyter_mode='_none')
-
+    
+if __name__ == '__main__':
+    app.run(jupyter_mode='_none', debug=None)
 
 
 
